@@ -1,0 +1,82 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@theme inline {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --font-sans: "DM Sans", sans-serif;
+  --font-display: "Manrope", sans-serif;
+}
+
+:root {
+  --background: 42 30% 96%;
+  --foreground: 177 30% 14%;
+  --card: 0 0% 100%;
+  --card-foreground: 177 30% 14%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 177 30% 14%;
+  --primary: 177 40% 20%;
+  --primary-foreground: 42 30% 96%;
+  --secondary: 37 91% 56%;
+  --secondary-foreground: 177 45% 12%;
+  --muted: 40 21% 90%;
+  --muted-foreground: 177 12% 42%;
+  --accent: 157 47% 37%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 4 67% 49%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 40 18% 83%;
+  --input: 40 18% 83%;
+  --ring: 37 91% 56%;
+  --radius: 0.9rem;
+}
+
+* { border-color: hsl(var(--border)); }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: "DM Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background-image: radial-gradient(circle at 10% 0%, rgba(230, 159, 46, 0.09), transparent 32rem), radial-gradient(circle at 90% 35%, rgba(50, 126, 104, 0.06), transparent 30rem);
+}
+h1, h2, h3, h4 { font-family: "Manrope", sans-serif; letter-spacing: -0.035em; }
+button, input, select { font: inherit; }
+button { cursor: pointer; }
+::selection { background: rgba(230, 159, 46, 0.3); }
+
+.text-balance { text-wrap: balance; }
+.paper-grid { background-image: linear-gradient(rgba(16, 43, 44, .045) 1px, transparent 1px), linear-gradient(90deg, rgba(16, 43, 44, .045) 1px, transparent 1px); background-size: 28px 28px; }
+.shadow-lift { box-shadow: 0 20px 60px rgba(16, 43, 44, .09), 0 3px 12px rgba(16, 43, 44, .04); }
+.shadow-soft { box-shadow: 0 10px 30px rgba(16, 43, 44, .07); }
+.ease-snappy { transition-timing-function: cubic-bezier(.23, 1, .32, 1); }
+
+@media (prefers-reduced-motion: no-preference) {
+  .rise-in { animation: rise-in .55s cubic-bezier(.23, 1, .32, 1) both; }
+  .delay-1 { animation-delay: 80ms; }
+  .delay-2 { animation-delay: 150ms; }
+  .delay-3 { animation-delay: 220ms; }
+  @keyframes rise-in { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+}

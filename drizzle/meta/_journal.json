@@ -1,0 +1,13 @@
+{
+  "version": "7",
+  "dialect": "mysql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1788507132134,
+      "tag": "0000_unique_lucky_pierre",
+      "breakpoints": true
+    }
+  ]
+}
