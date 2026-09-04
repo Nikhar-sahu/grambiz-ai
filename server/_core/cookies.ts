@@ -1,4 +1,5 @@
 import type { CookieOptions, Request } from "express";
+import { parse } from "cookie";
 
 const LOCAL_HOSTS = new Set(["localhost", "127.0.0.1", "::1"]);
 
@@ -21,6 +22,11 @@ function isSecureRequest(req: Request) {
   return protoList.some(proto => proto.trim().toLowerCase() === "https");
 }
 
+export function parseCookieHeader(
+  header: string
+): Record<string, string> {
+  return parse(header);
+}
 export function getSessionCookieOptions(
   req: Request
 ): Pick<CookieOptions, "domain" | "httpOnly" | "path" | "sameSite" | "secure"> {
